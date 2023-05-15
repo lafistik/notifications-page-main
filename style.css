@@ -84,12 +84,21 @@ header p {
 
 .notification {
   font-size: 0.875rem;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 1rem;
 
   display: flex;
   flex-direction: row;
   gap: 0.875rem;
+
+  cursor: pointer;
+  transition: 0.375s ease-in;
+}
+
+.notification:hover,
+.notification:active {
+  border-color: hsl(205, 33%, 90%);
 }
 
 .notification.active {
@@ -200,7 +209,7 @@ header p {
   .container {
     margin: 1.5rem;
     max-width: 45.625rem;
-    padding: 2rem 2rem 0;
+    padding: 2rem;
   }
 
   .notification {
