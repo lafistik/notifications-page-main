@@ -1,0 +1,237 @@
+:root {
+  --clr-red: hsl(1, 90%, 64%);
+  --clr-blue: hsl(219, 85%, 26%);
+  --clr-dkblue: hsl(224, 21%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* THANK YOU FOR CREATIVE NAMING FEMENTOR */
+  /* 
+    - Very light grayish blue: hsl(210, 60%, 98%)
+    - Light grayish blue 1: hsl(211, 68%, 94%)
+    - Light grayish blue 2: hsl(205, 33%, 90%)
+    - Grayish blue: hsl(219, 14%, 63%)
+    - Dark grayish blue: hsl(219, 12%, 42%) 
+*/
+
+  --fw-500: 500;
+  --fw-800: 800;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(210, 60%, 98%);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fw-500);
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  padding: 1.5rem 1rem;
+  background-color: var(--clr-white);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--clr-dkblue);
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+header .unread-num {
+  color: var(--clr-white);
+  background-color: var(--clr-blue);
+  font-size: 1.125rem;
+  padding: 0.125rem 0.75rem;
+  border-radius: 8px;
+}
+
+header p {
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: hsl(219, 12%, 42%);
+}
+
+/* NOTIFICATIONS */
+
+.notifications {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notification {
+  font-size: 0.875rem;
+  border-radius: 8px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.875rem;
+}
+
+.notification.active {
+  background-color: hsl(210, 60%, 98%);
+}
+
+.notification-image img {
+  width: 39px;
+  height: 39px;
+  border-radius: 100px;
+}
+
+.notification-content {
+  color: hsl(219, 12%, 42%);
+}
+
+.notification-content .name {
+  color: var(--clr-dkblue);
+  font-weight: var(--fw-800);
+  margin-right: 3px;
+}
+
+.notification-content .post-name {
+  color: hsl(219, 12%, 42%);
+  font-weight: var(--fw-800);
+  margin-left: 3px;
+}
+
+.notification-content .group-name {
+  color: var(--clr-blue);
+  font-weight: var(--fw-800);
+  margin-left: 3px;
+}
+
+.notification.active .notification-icon {
+  width: 8px;
+  height: 8px;
+  background-color: var(--clr-red);
+  border-radius: 100px;
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.notification-content .time {
+  color: hsl(219, 14%, 63%);
+  margin-top: 0.25rem;
+}
+
+.notification-content .post-message {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border: 1px solid hsl(205, 33%, 90%);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.375s ease-in;
+}
+
+.notification-content .post-message:hover,
+.notification-content .post-message:active {
+  background-color: hsl(205, 33%, 90%);
+}
+
+.notification .post-picture {
+  margin-left: auto;
+}
+
+.notification .post-picture img {
+  width: 39px;
+  height: 39px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: 0.375s ease-in;
+}
+
+.notification .post-picture img:hover,
+.notification .post-picture img:active {
+  border: 2px solid hsl(211, 68%, 94%);
+}
+
+.mark-read,
+.name,
+.post-name,
+.group-name {
+  cursor: pointer;
+  transition: 0.375s ease-in;
+}
+
+.mark-read:hover,
+.mark-read:active,
+.name:hover,
+.name:active,
+.post-name:hover,
+.post-name:active,
+.group-name:hover,
+.group-name:active {
+  color: var(--clr-blue);
+}
+
+@media (min-width: 26.5625em) {
+  .container {
+    margin: 1rem;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 47.5em) {
+  .container {
+    margin: 1.5rem;
+    max-width: 45.625rem;
+    padding: 2rem 2rem 0;
+  }
+
+  .notification {
+    gap: 1.25rem;
+    padding: 1.125rem;
+  }
+
+  .notifications {
+    gap: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.375rem;
+  }
+
+  header .unread-num {
+    font-size: 1.125rem;
+  }
+
+  header p,
+  .notification {
+    font-size: 1rem;
+  }
+
+  .notification-image img,
+  .notification .post-picture img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* title - 20 */
+/* text - 14 */
+/* images - 39 */
